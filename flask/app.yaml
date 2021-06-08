@@ -1,0 +1,6 @@
+service: backend
+runtime: python37
+env_variables:
+  FLASK_APP: app.py
+instance_class: F4_1G
+entrypoint: gunicorn --timeout 300 --workers 3 --worker-class gevent --bind :$PORT app:app
